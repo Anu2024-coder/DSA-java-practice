@@ -1,0 +1,88 @@
+A Linked List -  is a dynamic linear data structure in which elements (nodes) are not stored in contiguous memory locations.
+Each node contains:
+Data part
+Link (pointer) to the next node
+
+Types of Linked Lists-
+1 Singly Linked List
+2 Doubly (Two-way) Linked List
+3 Circular Linked List
+4 Header Linked List
+
+Each node is stored at any free memory location and linked using pointers.
+
+Nodes are connected using addresses, not physical order
+Last node points to NULL
+
+Memory is allocated dynamically at runtime.
+
+Traversal of Linked List
+
+Traversal means visiting each node exactly once.
+Algorithm:
+Start from head
+Print data
+Move to next
+Stop when NULL is reached
+Time Complexity:O(n)
+
+Insertion in Linked List
+(a) Insertion at Beginning
+Steps:
+Create new node
+Set newNode.next = head
+Update head = newNode
+Time: O(1)
+
+(b) Insertion at End
+Steps:
+Traverse till last node
+Set last.next = newNode
+newNode.next = NULL
+Time: O(n)
+
+(c) Insertion at Specific Position
+Steps:
+Traverse till position-1
+Adjust pointers
+Time: O(n)
+
+
+Deletion in Linked List
+(a) Deletion at Beginning
+Steps:
+head = head.next
+Time: O(1)
+
+(b) Deletion at End
+Steps:
+Traverse to second last node
+Set secondLast.next = NULL
+Time: O(n)
+
+(c) Deletion of Specific Node
+Steps:
+Search element
+Adjust links
+Time: O(n)
+
+
+A Header Linked List - contains a special header node that does not store actual data.
+Types:
+Grounded Header List – Last node points to NULL
+Circular Header List – Last node points to header
+
+A Grounded Linked List - is a normal linked list where:
+Last node points to NULL
+
+In a Circular Linked List: Last node points to first node
+No NULL pointers
+Useful in:
+Round-robin scheduling
+Circular queues
+
+
+Two-Way (Doubly) Linked List - Each node has three parts:
+Previous pointer
+Data
+Next pointer
