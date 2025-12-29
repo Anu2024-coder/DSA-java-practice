@@ -1,3 +1,4 @@
+//Linked list 
 public class Basic{
     public class Node{
         int data;
