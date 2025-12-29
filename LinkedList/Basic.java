@@ -70,6 +70,90 @@ public class Basic{
         temp.next=newNode;
 
     }
+
+    public int removeFirst(){
+        if(size==0){
+            System.out.println("LL is empty");
+            return Integer.MIN_VALUE;
+        }else if(size==1){
+            int val=head.data;
+            head=tail=null;
+            size=0;
+            return val;
+        }
+        int val=head.data;
+        head=head.next;
+        size--;
+        return val;
+    }
+
+    public static int removeLast(){
+        if(size==0){
+            System.out.println("LL is empty");
+            return Integer.MIN_VALUE;
+        }else if(size==1){
+            int val=head.data;
+            head=tail=null;
+            size=0;
+            return val;
+        }
+        //prev: i=size-2; bcz null i=size-1
+        Node prev=head;
+        for(int i=0;i<size-2;i++){
+            prev=prev.next;
+        }
+        int val=prev.next.data; //tail.data
+        prev.next=null;
+        tail=prev;
+        size--;
+        return val;
+    }
+
+    public int iterativeSearch(int key){  //Time complexity- O(n)
+        Node temp=head;
+        int i=0;
+        while(temp!=null){
+            if(temp.data==key){ //key found
+                return i;
+            }
+            temp=temp.next;
+            i++;
+        }
+        //key not found
+        return -1;
+    }
+
+    public int helper(Node head, int key){ //actual recursive function Time complexity - O(n)
+        if(head==null){
+            return -1;
+        }
+
+        if(head.data==key){
+            return 0;
+        }
+        int index=helper(head.next,key);
+        if(index==-1){
+            return -1;
+        }
+        return index+1;
+    }
+    public int recursiveSearch(int key){
+        return helper(head,key);
+    }
+
+    public void reverse(){  //Time complexity - O(n)
+        Node prev=null;
+        Node curr=tail=head;
+        Node next;
+
+        while(curr!=null){
+            next=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=next;
+        }
+        head=prev;
+    }
     public static void main(String args[]){
         Basic ll=new Basic();
         ll.addFirst(1);
@@ -78,6 +162,12 @@ public class Basic{
         ll.addLast(4);
         ll.add(2,9);
         ll.print();
-        System.out.println(ll.size);
+        ll.removeFirst();
+        ll.removeLast();
+        System.out.println("size"+ll.size);
+        System.out.println("key found at index "+ll.iterativeSearch(3));
+        System.out.println("key found at index "+ll.recursiveSearch(1));
+        ll.reverse();
+        ll.print();
     }
 }
