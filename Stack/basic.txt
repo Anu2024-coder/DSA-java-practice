@@ -8,3 +8,26 @@ LIFO – Last In, First Out
 
 🔹 The element inserted last is removed first
 🔹 Operations are performed only from one end, called the TOP
+
+2. Stack Representations
+(A) Stack using Array Representation
+
+📌 Uses a fixed-size array
+
+Components:
+
+arr[] → array
+
+top → index of the top element (initially -1)
+
+(B) Stack using Linked List Representation
+
+📌 Uses nodes instead of array
+
+Each node contains:
+
+Data
+
+Pointer to next node
+
+Top points to the first node
