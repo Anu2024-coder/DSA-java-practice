@@ -56,3 +56,19 @@ Check underflow
 Remove element
 
 Decrement top
+
+
+(3) Traversal
+
+Displays elements from top to bottom
+
+4. Arithmetic Expressions
+Types of Notations
+Notation	                Example
+Infix	                    A + B
+Prefix (Polish)	            + A B
+Postfix (Reverse Polish)	A B +
+
+5. Polish Notation (Prefix)
+
+📌 Operator comes before operands
