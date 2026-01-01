@@ -31,3 +31,28 @@ Data
 Pointer to next node
 
 Top points to the first node
+
+3. Operations on Stack
+(1) Push (Insertion)
+
+Adds an element at the top
+
+Steps:
+
+Check overflow
+
+Increment top
+
+Insert element
+
+(2) Pop (Deletion)
+
+Removes element from the top
+
+Steps:
+
+Check underflow
+
+Remove element
+
+Decrement top
