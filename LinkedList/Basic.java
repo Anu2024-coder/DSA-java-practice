@@ -155,6 +155,72 @@ public class Basic{
         }
         head=prev;
     }
+
+    public void deleteNthfromEnd(int n){
+        int sz=0;
+        Node temp=head;
+        while(temp!=null){
+            temp=temp.next;
+            sz++;
+        }
+        if(n==sz){  //if we want to delete head
+            head=head.next; //remove first
+            return;
+        }
+
+        //sz-n
+        int i=1;
+        int iToFind=sz-n;
+        Node prev=head;
+        while(i<iToFind){
+            prev=prev.next;
+            i++;
+        }
+        prev.next=prev.next.next;
+        return;
+    }
+
+    //slow fast approach
+    public Node findMid(Node head){ //-helper function
+        Node slow=head;
+        Node fast=head;
+        while(fast!=null && fast.next!=null){
+            slow=slow.next; //+1
+            fast=fast.next.next; //+2
+        }
+        return slow; // slow is middle node
+    }
+
+    public boolean checkPalindrome(){
+        //base case
+        if(head==null || head.next==null){
+            return true;
+        }
+        //step1 - find mid
+        Node midNode=findMid(head);
+        //step2 - reverse second half
+        Node prev=null;
+        Node curr=midNode;
+        Node next;
+        while(curr!=null){
+            next=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=next;
+        }
+
+        Node right = prev;//right half head
+        Node left = head;
+        //step3 - check left half==right half
+        while(right!=null){
+            if(left.data!=right.data){
+                return false;
+            }
+            left=left.next;
+            right=right.next;
+        }
+        return true;
+    }
     public static void main(String args[]){
         Basic ll=new Basic();
         ll.addFirst(1);
@@ -170,5 +236,8 @@ public class Basic{
         System.out.println("key found at index "+ll.recursiveSearch(1));
         ll.reverse();
         ll.print();
+        ll.deleteNthfromEnd(2);
+        ll.print();
+        System.out.println(ll.checkPalindrome());
     }
 }
