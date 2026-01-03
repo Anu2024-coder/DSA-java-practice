@@ -75,6 +75,7 @@ Steps:
 ----A Grounded Linked List - is a normal linked list where:
 Last node points to NULL
 
+
 ----In a Circular Linked List: Last node points to first node
 No NULL pointers
 --Useful in:
