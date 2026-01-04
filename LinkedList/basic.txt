@@ -1,7 +1,9 @@
 ----A Linked List -  is a dynamic linear data structure in which elements (nodes) are not stored in contiguous memory locations.
+
 Each node contains:
 1 Data part
 2 Link (pointer) to the next node
+
 
 ----Types of Linked Lists-
 1 Singly Linked List
