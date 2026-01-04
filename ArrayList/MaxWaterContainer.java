@@ -14,6 +14,7 @@ public class MaxWaterContainer {
         return maxWater;
     }
     public static void main(String args[]){
+        
         ArrayList<Integer> height = new ArrayList<>();
         height.add(1);
         height.add(8);
