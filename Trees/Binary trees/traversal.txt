@@ -1,6 +1,8 @@
-with recursion - 3 traversal
-inorder
-preorder
-postorder
+1)with recursion - 3 traversal
 
-with iteration - level order traversal
+inorder- left subtree->Root->right subtree
+preorder- Root->left subtree->right subtree
+postorder- left-subtree->right subtree->Root
+
+
+2)with iteration - level order traversal
