@@ -1,8 +1,12 @@
-1)with recursion - 3 traversal
+1)with recursion - 3 traversal - dfs
 
 inorder- left subtree->Root->right subtree
 preorder- Root->left subtree->right subtree
 postorder- left-subtree->right subtree->Root
 
 
-2)with iteration - level order traversal
+2)with iteration - level order traversal - bfs
+
+
+height of tree-
+root se leke leaf tk ka maximum distance
