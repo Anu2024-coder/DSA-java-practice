@@ -5,7 +5,6 @@ inorder- left subtree->Root->right subtree
 preorder- Root->left subtree->right subtree
 postorder- left-subtree->right subtree->Root
 
-
 2)with iteration - level order traversal - bfs
 
 
@@ -15,7 +14,7 @@ root se leke leaf tk ka maximum distance
 --->diameter of a tree- 
 no. of nodes in the longest path between 2 leaves
 
- Approach 1- 
+ Approach 1- O(n^2)
  //diameter passes through root
  d=lh+rh+1
  //diameter doesn't pass through root
@@ -23,3 +22,20 @@ no. of nodes in the longest path between 2 leaves
  and compare with d=rh+lh+1
  then find max from those three-- max(ld,rd,d)
  
+ Approach 2- O(n)
+ by calculation height and diameter together
+
+ --->Subtree of another tree-
+ given the roots of two binary trees root and subroot, return true if there is a subtree of root with the same structure and node values of subroot and false otherwise.
+
+ Approach-
+ find subRoot in tree
+ check identical(subTree, node subTree)
+ OR check non identical
+ (inme se koi b condition fail hogyi to mtlb subtree nhi h)
+ if node.data!=subRoot.data
+ node==null|| subRoot==null
+ left subTree->non identical
+ right subTree->non identical
+
+ --->Top view of a tree
