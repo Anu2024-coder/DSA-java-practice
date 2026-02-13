@@ -37,6 +37,19 @@ public class heightOfTree {
         int rightSum=sum(root.right);
         return leftSum+rightSum+root.data;
     }
+
+    public static int diameter(Node root){
+        if(root==null){
+            return 0;
+        }
+        int ld=diameter(root.left);
+        int lh=height(root.left);
+        int rd=diameter(root.right);
+        int rh=height(root.right);
+
+        int selfD=lh+rh+1;
+        return Math.max(selfD, Math.max(ld,rd));
+    }
     public static void main(String args[]){
         Node root = new Node(1);
         root.left=new Node(2);
@@ -47,6 +60,7 @@ public class heightOfTree {
         root.right.right=new Node(7);
         System.out.println(height(root));
         System.out.println(count(root));
-        System.out.print(sum(root));
+        System.out.println(sum(root));
+        System.out.println(diameter(root));
     }
 }

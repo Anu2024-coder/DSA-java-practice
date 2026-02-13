@@ -1,3 +1,4 @@
+--->Traversal
 1)with recursion - 3 traversal - dfs
 
 inorder- left subtree->Root->right subtree
@@ -8,5 +9,17 @@ postorder- left-subtree->right subtree->Root
 2)with iteration - level order traversal - bfs
 
 
-height of tree-
+--->height of tree-
 root se leke leaf tk ka maximum distance
+
+--->diameter of a tree- 
+no. of nodes in the longest path between 2 leaves
+
+ Approach 1- 
+ //diameter passes through root
+ d=lh+rh+1
+ //diameter doesn't pass through root
+ find ld, rd
+ and compare with d=rh+lh+1
+ then find max from those three-- max(ld,rd,d)
+ 
