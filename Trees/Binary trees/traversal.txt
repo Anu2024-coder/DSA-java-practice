@@ -39,3 +39,4 @@ no. of nodes in the longest path between 2 leaves
  right subTree->non identical
 
  --->Top view of a tree
+ level order traversal(bfs) + horizontal distance + hashmap
