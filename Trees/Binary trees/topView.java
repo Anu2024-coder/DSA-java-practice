@@ -22,7 +22,7 @@ public class topView {
         }
     }
 
-    public static void topView(Node root){
+    public static void topViewOfTree(Node root){
         //level order traversal
         Queue<Info>q=new LinkedList<>();
         HashMap<Integer, Node> map=new HashMap<>();
@@ -71,6 +71,6 @@ public class topView {
         root.right.left=new Node(6);
         root.right.right=new Node(7);
 
-        topView(root);
+        topViewOfTree(root);
        }
 }
