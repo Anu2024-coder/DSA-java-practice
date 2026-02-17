@@ -1,5 +1,4 @@
 public class kthLevel {
-
     public static class Node{
         int data;
         Node left;
@@ -12,7 +11,7 @@ public class kthLevel {
         }
     }
 
-    public static void kthLevel(Node root, int level, int k){
+    public static void kthLevel(Node root, int level, int k){ //O(n)
         if(root==null){
             return;
         }

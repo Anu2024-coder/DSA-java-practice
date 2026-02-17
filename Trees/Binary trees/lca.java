@@ -51,6 +51,29 @@ public class lca {
         Node lca=path1.get(i-1);
         return lca;
     }
+
+    public static Node lowestCommonAncestor2(Node root, int n1, int n2){
+        if(root==null || root.data==n1||root.data==n2){
+            return root;
+        }
+        Node leftLca=lowestCommonAncestor2(root.left,n1,n2);
+        Node rightLca=lowestCommonAncestor2(root.right,n1,n2);
+        //leftLca=val rightLca=null
+        if(rightLca==null){
+            return leftLca;
+        }
+        if(leftLca==null){
+            return rightLca;
+        }
+        return root;
+    }
+
+    public static int minDistance(Node root, int n1, int n2){
+        Node lca=lowestCommonAncesstor2(root,n1,n2);
+        int dist1=lcaDist(lca,n1);
+        int dist2=lcaDist(lca,n2);
+        return dist1+dist2;
+    }
     public static void main(String args[]){
         Node root=new Node(1);
         root.left=new Node(2);
@@ -60,7 +83,8 @@ public class lca {
         root.right.left=new Node(6);
         root.right.right=new Node(7);
         int n1=4;
-        int n2=5;
-        System.out.print(lowestCommonAncestor(root,n1,n2).data);
+        int n2=6;
+        System.out.println(lowestCommonAncestor(root,n1,n2).data);
+        System.out.println(lowestCommonAncestor2(root,n1,n2).data);
     }
 }
