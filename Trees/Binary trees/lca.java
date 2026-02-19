@@ -94,7 +94,7 @@ public class lca {
         return dist1+dist2;
     }
 
-    public static int kthAncestor(Node root, int n, int k){
+    public static int kthAncestor(Node root, int n, int k){ //O(n)
         if(root==null){
             return -1;
         }
@@ -115,6 +115,32 @@ public class lca {
         }
         return max+1;
     }
+
+    public static int transform(Node root){ //O(n)
+        if(root==null){
+            return 0;
+        }
+
+        int leftChild=transform(root.left);
+        int rightChild=transform(root.right);
+
+        int data=root.data;
+
+        int newLeft=root.left==null?0:root.left.data;
+        int newRight=root.right==null?0:root.right.data;
+
+        root.data=newLeft+leftChild+newRight+rightChild;
+        return data;
+    }
+
+    public static void preorder(Node root){
+        if(root==null){
+            return;
+        }
+        System.out.print(root.data+" ");
+        preorder(root.left);
+        preorder(root.right);
+    }
     public static void main(String args[]){
         Node root=new Node(1);
         root.left=new Node(2);
@@ -130,5 +156,7 @@ public class lca {
         System.out.println(lowestCommonAncestor2(root,n1,n2).data);
         System.out.println(minDistance(root, n1, n2));
         kthAncestor(root, n, k);
+        transform(root);
+        preorder(root);
     }
 }
