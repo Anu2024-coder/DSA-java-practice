@@ -68,8 +68,27 @@ public class lca {
         return root;
     }
 
+    public static int lcaDist(Node root, int n){
+        if(root==null){
+            return -1;
+        }
+        if(root.data==n){
+            return 0;
+        }
+        int leftDist=lcaDist(root.left,n);
+        int rightDist=lcaDist(root.right,n);
+
+        if(leftDist==-1 && rightDist==-1){
+            return -1;
+        }else if(leftDist==-1){
+            return rightDist+1;
+        } else{
+            return leftDist+1;
+        }
+
+    }
     public static int minDistance(Node root, int n1, int n2){
-        Node lca=lowestCommonAncesstor2(root,n1,n2);
+        Node lca=lowestCommonAncestor2(root,n1,n2);
         int dist1=lcaDist(lca,n1);
         int dist2=lcaDist(lca,n2);
         return dist1+dist2;
@@ -86,5 +105,6 @@ public class lca {
         int n2=6;
         System.out.println(lowestCommonAncestor(root,n1,n2).data);
         System.out.println(lowestCommonAncestor2(root,n1,n2).data);
+        System.out.println(minDistance(root, n1, n2));
     }
 }
