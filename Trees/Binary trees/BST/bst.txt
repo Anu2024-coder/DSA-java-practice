@@ -1,1 +1,2 @@
+why bst--bst makes search efficient-- O(h)
 special property--Inorder traversal of BST gives a sorted sequence
