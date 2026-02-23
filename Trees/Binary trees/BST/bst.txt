@@ -1,2 +1,16 @@
 why bst--bst makes search efficient-- O(h)
 special property--Inorder traversal of BST gives a sorted sequence
+
+delete a node
+cases-
+1 No child(leaf node)
+Delete Node and return to parent
+2 one child
+Delete Node and replace with child Node
+3 two children
+Replace value with inorder successor    (inorder successor->left most node in right subtree)(inorder successor has always 0 or 1 child)
+delete the node for inorder successor
+
+validate bst- Approach 1- compare with left and right Node (will fail)
+ check if Inorder traversal is sorted, if sorted bst is validated
+Approach 2-check if max value in left subtree < node and min value in right subtree > node

@@ -1,3 +1,4 @@
+import java.util.*;
 public class buildBst{
     static class Node{
         int data;
@@ -44,6 +45,43 @@ public class buildBst{
             return search(root.right,key);
         }
     }
+
+    public static void printInRange(Node root, int k1, int k2){
+        if(root==null){
+            return;
+        }
+        if(root.data>=k1 && root.data<=k2){
+            printInRange(root.left,k1,k2);
+            System.out.print(root.data+" ");
+            printInRange(root.right,k1,k2);
+        }
+        else if(root.data<k1){
+            printInRange(root.left,k1,k2);
+        }else{
+            printInRange(root.right,k1,k2);
+        }
+    }
+
+    public static void printPath(ArrayList<Integer>path){
+        for(int i=0;i<path.size();i++){
+            System.out.print(path.get(i)+"->");
+        }
+        System.out.println("Null");
+    }
+    public static void printRootToLeaf(Node root , ArrayList<Integer>path){
+        if(root==null){
+            return;
+        }
+
+        path.add(root.data);
+        if(root.left==null && root.right==null){
+            printPath(path);
+        }
+
+        printRootToLeaf(root.left,path);
+        printRootToLeaf(root.right,path);
+        path.remove(path.size()-1);
+    }
     public static void main(String args[]){
         int values[]={5,1,3,4,2,7};
         Node root=null;
@@ -58,5 +96,8 @@ public class buildBst{
         }else{
             System.out.println("Key not found");
         }
+
+        printInRange(root,5,12);
+        printRootToLeaf(root, new ArrayList<>());
     }
 }
