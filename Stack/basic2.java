@@ -1,4 +1,4 @@
-import java.util.*;
+//stack using linked list
 public class basic2 {
     static class Node{
         int data;
