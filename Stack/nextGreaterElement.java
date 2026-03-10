@@ -24,5 +24,9 @@ public class nextGreaterElement {
             System.out.print(nextGreater[i]+" ");
         }
         System.out.println();
+        //next greater right
+        //next greater left
+        //next smaller right
+        //next smaller left
     }
 }
