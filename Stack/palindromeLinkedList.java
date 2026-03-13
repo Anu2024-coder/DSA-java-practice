@@ -1,15 +1,14 @@
 import java.util.*;
-class Node{
-    int data;
-    Node next;
+public class palindromeLinkedList {
+    static class Node{
+        int data;
+        Node next;
 
     Node(int data){
         this.data=data;
         this.next=null;
     }
 }
-
-public class palindromeLinkedList {
     public static boolean isPalindrome(Node head){
         Stack<Integer> s=new Stack<>();
         Node temp=head;
