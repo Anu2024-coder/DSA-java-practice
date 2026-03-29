@@ -30,6 +30,6 @@ HashMap<int,lists> where int-vertex(key) and lists-value
 4)2D matrix(Implicit graph)
 
 Graph Applications
-
+creating a graph
 BFS
 DFS
