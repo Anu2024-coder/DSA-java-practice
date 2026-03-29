@@ -1,0 +1,28 @@
+A Graph is a data structure made of:
+
+Vertices (Nodes) → points
+Edges → connections between nodes
+
+Types of Graphs--
+1)Based on Direction
+Undirected Graph(bidirected) → A — B
+Directed Graph (Digraph) → A → B
+2)Based on Weight
+Unweighted → edges have no cost
+Weighted → edges have weights (distance, cost) can be negative also
+
+Special Types
+Cyclic Graph → contains cycle
+Acyclic Graph (DAG) → no cycle
+Connected Graph
+Disconnected Graph
+
+
+Storing a graph-
+1)Adjacency list - lists of lists (optimized in terms of time and space) 
+examples- ArrayList<ArrayList>
+Array<ArrayList> *preferred
+HashMap<int,lists> where int-vertex(key) and lists-value
+2)Adjacency matrix
+3)Edge list
+4)2D matrix(Implicit graph)
