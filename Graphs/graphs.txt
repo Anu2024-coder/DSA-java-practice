@@ -7,6 +7,7 @@ Types of Graphs--
 1)Based on Direction
 Undirected Graph(bidirected) → A — B
 Directed Graph (Digraph) → A → B
+
 2)Based on Weight
 Unweighted → edges have no cost
 Weighted → edges have weights (distance, cost) can be negative also
@@ -24,5 +25,8 @@ examples- ArrayList<ArrayList>
 Array<ArrayList> *preferred
 HashMap<int,lists> where int-vertex(key) and lists-value
 2)Adjacency matrix
+
 3)Edge list
 4)2D matrix(Implicit graph)
+
+Graph Applications
